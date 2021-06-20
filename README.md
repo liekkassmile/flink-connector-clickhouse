@@ -1,6 +1,6 @@
 flink-connector-clickhouse
 
-flink版本1.12对应scala版本2.11
+flink版本1.12
 
 支持批量写入定时刷新
 
