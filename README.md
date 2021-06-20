@@ -4,6 +4,10 @@ flink版本1.12
 
 支持批量写入定时刷新
 
+支持写入集群表和本地表
+
+支持三种写入策略(hash | shuffle | balanced)
+
 暂支持sink，后续加上source
 
 使用：
@@ -15,7 +19,7 @@ flink版本1.12
         more VARCHAR 
     ) WITH (
         'connector' = 'clickhouse',   
-        'url' = 'clickhouse://192.168.8.94:8123',
+        'url' = 'clickhouse://192.168.8.94:8123', /* 如果是写入本地表,则会根据表名从system库获取本地表名称 */
         'username' = '',
         'password' = '',
         'database-name' = 'glab',        /* ClickHouse 数据库名，默认为 default */
